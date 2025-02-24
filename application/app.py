@@ -1,10 +1,12 @@
 from flask import Flask
+from application.bp.homepage import homepage  # Import Blueprint
 
-# initialize Flask service
 app = Flask(__name__)
-# register blueprint
 
+# Register Blueprint
+app.register_blueprint(homepage, url_prefix='/')
 
-if __name__ == "__main__":
+if __name__ == '__main__':
     app.run(debug=True)
+
 
